@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "process-argv": "node exercicios/process-argv",
-    "par-ou-impar": "clear && node exercicios/par-ou-impar.js"
+    "par-ou-impar": "clear && node exercicios/par-ou-impar.js",
+    "start-ts": "tsc && node ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Marioccarneiro/labecommerce-backend/issues"
   },
-  "homepage": "https://github.com/Marioccarneiro/labecommerce-backend#readme"
+  "homepage": "https://github.com/Marioccarneiro/labecommerce-backend#readme",
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "typescript": "^5.2.2"
+  }
 }
