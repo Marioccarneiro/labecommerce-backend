@@ -8,7 +8,8 @@
     "start": "node index.js",
     "process-argv": "node exercicios/process-argv",
     "par-ou-impar": "clear && node exercicios/par-ou-impar.js",
-    "start-ts": "tsc && node ./build/index.js"
+    "start-ts": "tsc && node ./build/index.js",
+    "dev": "ts-node-dev src/index.ts"
   },
   "repository": {
     "type": "git",
