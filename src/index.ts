@@ -85,3 +85,71 @@ app.post('/products', (req: Request, res: Response) => {
 
     res.status(201).send('Produto registrado com sucesso')
 })
+
+// DELETE USER BY ID
+
+app.delete('/users/:id', (req: Request, res: Response) => {
+    // identificação do que será deletado via path params
+const idToDelete = req.params.id
+
+    // encontrar o index do item que será removido
+const userIndex = users.findIndex((user) => user.id === idToDelete)
+
+    // caso o item exista, o index será maior ou igual a 0
+if (userIndex >= 0) {
+            // remoção do item através de sua posição
+    users.splice(userIndex, 1)
+}
+
+res.status(200).send("User apagado com sucesso")
+})
+
+
+// DELETE PRODUCT BY ID
+
+app.delete('/products/:id', (req: Request, res: Response) => {
+    // identificação do que será deletado via path params
+const idToDelete = req.params.id
+
+    // encontrar o index do item que será removido
+const productIndex = products.findIndex((product) => product.id === idToDelete)
+
+    // caso o item exista, o index será maior ou igual a 0
+if (productIndex >= 0) {
+            // remoção do item através de sua posição
+    products.splice(productIndex, 1)
+}
+
+res.status(200).send("Produto apagado com sucesso")
+})
+
+
+// EDIT PRODUCT BY ID
+
+app.put('/products/:id', (req: Request, res: Response) => {
+
+const idToEdit = req.params.id
+
+
+    const newId = req.body.id as string | undefined
+    const newName = req.body.name as string | undefined
+    const newPrice = req.body.price as number | undefined
+    const newDescription = req.body.description as string | undefined 
+    const newImageUrl = req.body.imageUrl as string | undefined 
+
+const product = products.find((product) => product.id === idToEdit)
+
+
+if (product) {
+    // se o novo dado não foi definido, então mantém o que já existe
+    product.id = newId || product.id
+    product.name = newName || product.name
+    product.price = newPrice || product.price
+    product.description = newDescription || product.description
+    product.imageUrl = newImageUrl || product.imageUrl
+
+
+}
+
+res.status(200).send("Produto atulizado com sucesso")
+})
