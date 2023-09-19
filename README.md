@@ -6,7 +6,6 @@ A API disponível através do link  ------ https://documenter.getpostman.com/vie
 A documentação completa da API pode ser encontrada  através do link  ------ https://documenter.getpostman.com/view/28316598/2s9YC8xBvb. Ela descreve cada endpoint da API, os parâmetros necessários, as respostas esperadas e exemplos de solicitações.
 
 
-
 GET ALL USERS ---> Endpoint que busca todos os usuários cadastrados.
 
 GET ALL PRODUCTS---> Endpoint que busca todos os produtos cadastrados.
