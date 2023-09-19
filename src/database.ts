@@ -83,7 +83,6 @@ export function getAllUsers():TUsers[]{
 
 const listaDeUsuarios: TUsers[] = getAllUsers()
 
-
 //2
 
 export function createProduct(id: string, name:string, price:number, description: string, imageUrl: string):string {
