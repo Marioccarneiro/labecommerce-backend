@@ -10,7 +10,7 @@ CREATE TABLE users (
 
 INSERT INTO users (id, name, email, password, created_at) 
 VALUES 
-('u001', 'Fulano', 'fulano@email.com', 'fulano123', '26/09/2023'),
+('u001', 'Fulano', 'fulano@email.com', 'fulano123', ''$26/09/2023''),
 ('u002', 'Ciclano', 'ciclano@email.com', 'ciclano123', '26/09/2023'),
 ('u003', 'Beltrano', 'beltrano@email.com', 'beltrano123', '26/09/2023');
 
@@ -29,3 +29,40 @@ VALUES
 ('p003', 'Teclado Logitech', 849.99, 'teclado gamer', 'https://images.kabum.com.br/produtos/fotos/120492/teclado-mecanico-gamer-sem-fio-logitech-g915-tkl-rgb-usb-e-bluetooth-ultrafino-switch-de-perfil-baixo-gl-tactile-brown-branco-920-009660_1626267064_gg.jpg'),
 ('p004', 'Cadeira DXracing', 1599.99, 'cadeira gamer', 'https://ds92okzpvwldu.cloudfront.net/Custom/Content/Products/24/26/2426224_cadeira-gamer-dxracer-nex-preta-pink-ohok133pw-341_z1_637312076057661392.jpg'),
 ('p005', 'Mouse Pad Fallen', 119.99, 'mouse pad gamer', 'https://images.kabum.com.br/produtos/fotos/347336/mousepad-gamer-fallen-cs-go-ct-tr-speed-estendido-900x400mm-mp-fn-cs-ct-sm-es_1655996069_gg.jpg');
+
+
+SELECT * FROM users;
+
+SELECT * FROM products;
+
+SELECT * FROM products
+WHERE name LIKE '%gamer'
+
+SELECT * FROM products
+WHERE description LIKE '%gamer'
+
+INSERT INTO users (
+    id,
+    name, 
+    email,
+    password,
+    created_at)
+VALUES ('u004', 'Altrano', 'altrano@email.com', 'altrano123', '10/02/2023');
+
+INSERT INTO products (
+    id,
+    name, 
+    price,
+    description,
+    image_url)
+VALUES ('p006', 'Mini Teclado Mecanico', 254.99, 'Mini teclado gamer', 'https://images.kabum.com.br/produtos/fotos/108994/mini-teclado-mecanico-gamer-redragon-ida-diti-rgb-switch-outemu-blue-k585_1578660272_gg.jpg');
+
+DELETE FROM users
+WHERE id = 'u004';
+
+DELETE FROM products
+WHERE id = 'p006'
+
+UPDATE products
+SET name = 'Suporte para Monitor', price = 329.99, description = 'Suporte gamer para monitor', image_url = 'https://images.kabum.com.br/produtos/fotos/98460/98460_1537476727_index_gg.jpg'
+WHERE id = 'p005';
